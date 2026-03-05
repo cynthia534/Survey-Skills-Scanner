@@ -771,7 +771,10 @@ function doLogin(){
     document.getElementById('login-err').style.display='block';
   }
 }
-
+const supabase = supabase.createClient(
+  "https://zdqvrvludlhrsyenteip.supabase.co",
+  "sb_publishable_pn_oIM6VNotYGsv6K5OG_w_22JsN_Az"
+);
 // ============================================================
 // DASHBOARD RENDER
 // ============================================================
