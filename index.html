@@ -788,6 +788,13 @@ const supabase = supabase.createClient(
 
   if (error) console.log(error);
 }
+  async function loadResults() {
+  const { data, error } = await supabase
+    .from("survey_responses")
+    .select("*");
+
+  console.log(data);
+}
 // ============================================================
 // DASHBOARD RENDER
 // ============================================================
