@@ -771,10 +771,23 @@ function doLogin(){
     document.getElementById('login-err').style.display='block';
   }
 }
+  // ==== DATABASE CONNECTIE SUPABASE === //
 const supabase = supabase.createClient(
   "https://zdqvrvludlhrsyenteip.supabase.co",
   "sb_publishable_pn_oIM6VNotYGsv6K5OG_w_22JsN_Az"
 );
+  async function saveSurvey(answers, score) {
+  const { data, error } = await supabase
+    .from("survey_responses")
+    .insert([
+      {
+        answers: answers,
+        score: score
+      }
+    ]);
+
+  if (error) console.log(error);
+}
 // ============================================================
 // DASHBOARD RENDER
 // ============================================================
